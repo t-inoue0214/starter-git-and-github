@@ -71,26 +71,46 @@ gitGraph
 
 SIerやパッケージ開発、大規模システムで使われる、厳格で安全重視のフローです。
 
-- 特徴: 役割の違うブランチがたくさんあります。
+- **特徴:** 役割の違うブランチがたくさんあります。
   - `main` (または `master`): 本番環境用。絶対に壊してはいけない。
   - `develop`: 開発用。みんなの変更はここに集まる。
   - `release`: リリース直前のテスト用。
+  - `hotfix`: **本番環境の緊急バグ修正用。**
   - `feature`: 個人の作業用。
-- ルール: 開発者は develop からブランチを切り、`develop` に戻します。
+
+- **ルール:**
+  - 通常開発: `develop` から切り、`develop` に戻す。
+  - **緊急対応 (`hotfix`):** `main` から切り、**`main` と `develop` の両方に戻す。**（これを忘れると、次のリリースでバグが復活します！）
 
 ```mermaid
 gitGraph
-   commit id: "v1.0"
+   commit id: "v1.0" tag: "v1.0"
    branch develop
    checkout develop
    commit id: "dev初期"
    
    branch feature/A
    checkout feature/A
-   commit id: "機能A"
+   commit id: "機能A実装中"
+   
+   %% ここで緊急トラブル発生！
+   checkout main
+   branch hotfix/v1.0.1
+   commit id: "バグ修正"
+   checkout main
+   merge hotfix/v1.0.1 tag: "v1.0.1"
+   
+   %% 修正をdevelopにも反映させる（重要）
+   checkout develop
+   merge hotfix/v1.0.1
+   
+   %% 通常開発に戻る
+   checkout feature/A
+   commit id: "機能A完成"
    checkout develop
    merge feature/A
    
+   %% リリース作業
    branch release/1.1
    checkout release/1.1
    commit id: "微調整"
