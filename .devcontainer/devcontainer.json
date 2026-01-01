@@ -4,7 +4,8 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-ceintl.vscode-language-pack-ja"
+                "ms-ceintl.vscode-language-pack-ja",
+                "mermaidchart.vscode-mermaid-chart"
             ],
             "settings": {
                 "terminal.integrated.fontSize": 14
