@@ -11,6 +11,5 @@
                 "terminal.integrated.fontSize": 14
             }
         }
-    },
-    "postCreateCommand": "bash .devcontainer/setup.sh"
+    }
 }
