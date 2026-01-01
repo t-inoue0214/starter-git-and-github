@@ -55,6 +55,18 @@ git log --oneline --graph --all
 
 `HEAD -> feature/A, main` という表示になり、`HEADが feature/A` を指していることがわかります。
 
+若干、現在のブランチが分かりづらいですかね？
+
+もう１つ別のコマンドで、現在のブランチが`main`から`feature/A`に変わっていることを確認します。
+
+```bash
+# ローカルのブランチの一覧を表示するコマンドです
+git branch
+# * がついたブランチが現在チェックアウト済みのブランチです。
+* feature/A
+  main
+```
+
 ## 3. 実践：平行世界での変更
 
 ここでの変更は、元の世界（`main`）には影響しません。実験してみましょう。
@@ -96,6 +108,12 @@ git checkout main
 
 フォルダの中身を確認してください！
 
+```bash
+$ ls
+hello.txt
+$ cat hello.txt 
+Hello Get world
+```
 さっき作ったはずの feature.txt が消えているはずです。
 （ls コマンドなどで確認できます）
 
@@ -106,9 +124,17 @@ Gitは、ブランチを切り替えるたびに、フォルダの中身をそ�
 もう一度 `feature/A` に戻れば、ファイルは復活します。
 
 ```bash
+# feature/A にブランチを切り替える
 git checkout feature/A
+# ファイルを確認すると再びfeature.txtが復活
 ls
-# feature.txt がある！
+feature.txt  hello.txt
+# 中身を確認
+cat hello.txt 
+Hello Get world
+# 中身を確認
+cat ./feature.txt
+新機能Aです
 ```
 
 ## 5. 統合：マージ (`merge`)
