@@ -273,7 +273,7 @@ Git 2.23 (2019年) から、役割が多すぎた checkout コマンドを整理
 | 動作 | 従来のコマンド | 新コマンド |
 | -- | -- | -- |
 | ブランチを切り替える | `git checkout main` | `git switch main` |
-| 作成して切り替える| `git checkout -b feature` | `git switch -c feature` |
+| 作成して切り替える | `git checkout -b feature` | `git switch -c feature` |
 
 **ファイル復元**：`git restore`
 
