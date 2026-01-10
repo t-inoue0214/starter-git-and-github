@@ -1,4 +1,4 @@
-# starter-git-and-github
+# starter-git-with-github
 
 このリポジトリは、開発現場で必須となる **Git（ソースコード管理）** の概念と操作を、実際に手を動かしながら学ぶためのハンズオン資料です。
 
