@@ -16,9 +16,29 @@ Gitについては、[Git book](https://git-scm.com/book/ja/v2) を参照して�
 
 面倒な環境構築は不要です。ブラウザさえあれば、すぐに学習を始められます。
 
-1. Webブラウザで、このリポジトリの **[ <> Code ]** タブを開き、右上の緑色の **[ <> Code ]** ボタンをクリックします。
-2. **[ Codespaces ]** タブを選択します。
-3. **[ Create codespace on main ]** ボタンをクリックします。
+1. このリポジトリをフォークするため、右上の`fork`をクリックする
+
+    ![start-fork](./assets/start-fork.png)
+
+1. `Create fork`ボタンをクリックして、フォーク（自分のアカウントにコピーして新しいリポジトリを作成）します。
+
+    ![select-fork-option](./assets/select-fork-option.png)
+
+1. `Codespace`を起動するため、`Code`タブに移動し、右上にある緑色の`code`のプルダウンメニューを開き、`Codespace`タブを開き、`Create codespace on main`をクリックします。
+
+    ![success-setting](./assets/start-code-space.png)
+
+1. `Codespace`の生成にはしばらく時間がかかるため、しばらく待ちます。
+
+    ![create-now](./assets/create-now.png)
+
+1. `VSCode`が起動しますが、画面左下が`リモートを開いています...`の間は待ちます。
+
+    ![vscode-setup-now](./assets/vscode-setup-now.png)
+
+1. 画面左下が`Codespace`になった場合は、`Codespace`が起動完了しました
+
+    ![vscode-setup-finish](./assets/vscode-setup-finish.png)
 
 環境が立ち上がったら、左側のファイル一覧から学習したい章のフォルダを開いてください。
 
