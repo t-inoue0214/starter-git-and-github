@@ -22,11 +22,32 @@ git config --global user.email "toshi-inoue@example.co.jp"
 
 設定できたか確認してみましょう。
 
+一覧の中に、今設定した名前とメールアドレスが表示されていればOKです。
+
 ```bash
 git config --list
 ```
 
-一覧の中に、今設定した名前とメールアドレスが表示されていればOKです。
+ターミナルの行数より、設定の内容表示数が多い場合、ターミナルの表示は一度止まります。
+
+途中で止まった場合は、コロン（`:`）が最後の行に出てきます。
+
+```bash
+git config --list
+・
+・
+・
+user.name=toshi-inoue
+user.email=toshi-inoue@example.co.jp
+・
+・
+・
+:
+```
+
+`Enter`キーを押せば続きの行を表示します。
+
+もし終了したい場合は、`Q`キーを押すことで終了することができます。
 
 ## 2. 練習用エリアの作成 (`git init`)
 
