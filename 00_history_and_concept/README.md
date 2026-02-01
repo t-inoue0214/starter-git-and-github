@@ -166,8 +166,6 @@ Linuxの生みの親である **リーナス・トーバルズ (Linus Torvalds)*
 
 ```mermaid
 flowchart TD
-    classDef server fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef pc fill:#bbf,stroke:#333,stroke-width:2px;
 
     subgraph SVN_World ["SVN (集中型) の世界"]
         direction TB
@@ -198,9 +196,6 @@ flowchart TD
 
 ```mermaid
 flowchart TB
-    classDef server fill:#f9f,stroke:#333,stroke-width:2px,color:black;
-    classDef pc fill:#bbf,stroke:#333,stroke-width:2px,color:black;
-    classDef connect stroke:#333,stroke-width:2px,stroke-dasharray: 5 5;
     
     subgraph SVN_World ["Git (分散型) の世界"]
         direction TB
@@ -370,11 +365,6 @@ flowchart TD
 
     MyRepo -- "git clone" --> LocalRepo
     LocalRepo -- "git push" --> MyRepo
-    
-    %% スタイル定義
-    style TeacherRepo fill:#3d3d3d,stroke:#333
-    style MyRepo fill:#3d3d3d,stroke:#333
-    style LocalRepo fill:#3d3d3d,stroke:#333
 ```
 
 #### なぜForkするの？
